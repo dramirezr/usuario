@@ -4,6 +4,43 @@
 <head>
 	<title>PideTaxi.com</title>
 	<link rel="stylesheet" href="style.css" type="text/css" />
+	<script type="text/javascript" charset="utf-8" src="phonegap-1.0.0.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Espere a que PhoneGap se inicie
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // PhoneGap esta listo
+    //
+    function onDeviceReady() {
+        // vacio
+    }
+
+    // Muestra un cuadro de dialogo personalizado.
+    //
+    function showAlert() {
+        navigator.notification.alert(
+        'Eres el ganador!',     // mensaje (message)
+        'Game Over',            // titulo (title)
+        'Cerrar'                // nombre del botón (buttonName)
+        );
+    }
+
+    // Reproduce tres beeps
+    //
+    function playBeep() {
+        navigator.notification.beep(3);
+    }
+
+    // Vibra dos segundos
+    //
+    function vibrate() {
+        navigator.notification.vibrate(2000);
+    }
+
+    </script>
+
 </head>
 
 <body>
@@ -23,6 +60,11 @@
   <div class="centre">
 	<a href="http://www.pidataxi.com.co/app/es"><img src="es.png" /></a>
     <a href="http://www.pidataxi.com.co/app/en"><img src="en.png" /></a>
+<br>
+	<p><a href="#" onclick="showAlert(); return false;">Mostrar cuadro de dialogo</a></p>
+    <p><a href="#" onclick="playBeep(); return false;">Reproducir beep</a></p>
+    <p><a href="#" onclick="vibrate(); return false;">Vibrar</a></p>
+
   </div>
 </div>
 
